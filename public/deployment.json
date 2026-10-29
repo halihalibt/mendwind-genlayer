@@ -1,0 +1,10 @@
+{
+  "network": "Stable Studionet",
+  "chain_id": 61999,
+  "rpc": "https://studio.genlayer.com/api",
+  "version": "mendwind-1",
+  "source_sha256": "9d6c84a120a7e47bc3a429841818be1bb6be0edb454c239a4d087ae6ab1e5876",
+  "contract_address": "0x600573f2629cDFD0151723B5892B22A28877840a",
+  "deployment_transaction": "0x5385893da087d6eeb67297efa7c3dc7c2bb3d16088a5b812d84886e2a0889695",
+  "example_id": "0x1e4fffbe0e16502059c4c2358b9a0d8ed63cf075:afternoon-mvttetsf"
+}

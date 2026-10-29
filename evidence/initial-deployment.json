@@ -1,0 +1,318 @@
+{
+  "network": 61999,
+  "contract": "",
+  "entries": [
+    {
+      "sender": "0x341D44f3eC2C88a1E623d24878443B6E83Eb6783",
+      "address": "",
+      "method": "deploy",
+      "args": [],
+      "gameId": null,
+      "hash": "0x27b9ba032495edd0219e4778472773b283971b31a3f76e754720d555dfcdd704",
+      "submitted_at": "2026-10-29T17:21:27.188Z",
+      "status": "FINALIZED",
+      "execution": "ERROR",
+      "transaction": {
+        "hash": "0x27b9ba032495edd0219e4778472773b283971b31a3f76e754720d555dfcdd704",
+        "from_address": "0x341D44f3eC2C88a1E623d24878443B6E83Eb6783",
+        "to_address": "0x31B8BdCc7FD03f14e56164e37962c639eFFbc6b8",
+        "data": {
+          "calldata": {
+            "base64": "Bg==",
+            "raw": [
+              6
+            ],
+            "readable": "{}"
+          },
+          "contract_address": "0x31B8BdCc7FD03f14e56164e37962c639eFFbc6b8",
+          "contract_source_sha256": "3ab71f137b31999c73c84a46c433b6f2e5c69ef0e53e6bd08c722d914a5932b9"
+        },
+        "status": 7,
+        "result": 6,
+        "consensus_data": {
+          "votes": {
+            "0x007d6451555Df7765c707284F844137927aE4e5E": "agree",
+            "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a": "idle",
+            "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB": "idle",
+            "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907": "agree",
+            "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947": "agree"
+          },
+          "validators": [
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "result": "AmV4aXRfY29kZSAx",
+              "calldata": "Bg==",
+              "gas_used": 0,
+              "genvm_result": {
+                "stderr": "Traceback (most recent call last):\n  File \"/py/libs/_genlayer_runner.py\", line 180, in <module>\n    _handle_main()\n    ~~~~~~~~~~~~^^\n  File \"/py/libs/_genlayer_runner.py\", line 149, in _handle_main\n    import contract as _user_contract_module  # type: ignore\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/contract.py\", line 152, in <module>\n    class Mendwind(gl.Contract):\n    ...<67 lines>...\n            return canonical(record)\n  File \"/py/std/typing.py\", line 2067, in __new__\n    return super().__new__(mcls, name, bases, namespace, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen abc>\", line 106, in __new__\n  File \"/py/libs/genlayer/gl/genvm_contracts.py\", line 469, in __init_subclass__\n    generate_storage(cls)\n    ~~~~~~~~~~~~~~~~^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 42, in generate_storage\n    _storage_build(cls, {})\n    ~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 249, in _storage_build_inner\n    description = _storage_build_struct(new_cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 329, in _storage_build_struct\n    prop_desc = _storage_build(prop_value, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 238, in _storage_build_inner\n    args.append(_storage_build(c, generics_map))\n                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 219, in _storage_build_inner\n    raise TypeError(\n    \t'use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage'\n    )\nTypeError: use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage\nduring processing type `int`\nduring processing generic argument of `TreeMap[str, int]`, argument `int`, at index `1`\nduring processing type `TreeMap[str, int]`\nduring generating field `counts: genlayer.py.storage.tree_map.TreeMap[str, int]`\nduring processing type `Mendwind` (declared at {'file': '/contract.py', 'line': 151})\n",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              },
+              "execution_stats": {
+                "call_counts": {
+                  "STORAGE_READ": 5,
+                  "NOTIFY_FINISHED": 1
+                },
+                "host_first_method": "STORAGE_READ",
+                "delete_genvm_status": 200,
+                "host_loop_entered_s": 483.999212685,
+                "host_loop_enter_wait_ms": 1010,
+                "host_time_per_method_ms": {
+                  "STORAGE_READ": 6
+                },
+                "host_total_handling_time_ms": 6,
+                "manager_run_attempt_success": {
+                  "attempt": 0,
+                  "duration_ms": 1004
+                },
+                "host_first_method_received_s": 483.999644846,
+                "host_accept_to_first_method_ms": 0
+              },
+              "nondet_disagree": null,
+              "processing_time": 1488,
+              "execution_result": "ERROR",
+              "contract_state_hash": "c543b0dc2b173649cc8a1c5c4491673d8aaad73d3a9a9ca4ceaf57f2417c4754",
+              "pending_transactions": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "result": "AmlkbGU=",
+              "calldata": "",
+              "gas_used": 0,
+              "genvm_result": {
+                "stderr": "Validator execution cancelled after quorum",
+                "stdout": "",
+                "raw_error": {
+                  "fatal": false,
+                  "causes": [
+                    "VALIDATOR_QUORUM_REACHED"
+                  ]
+                },
+                "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+              },
+              "execution_stats": null,
+              "nondet_disagree": null,
+              "processing_time": 0,
+              "execution_result": "ERROR",
+              "contract_state_hash": null,
+              "pending_transactions": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "result": "AmV4aXRfY29kZSAx",
+              "calldata": "Bg==",
+              "gas_used": 0,
+              "genvm_result": {
+                "stderr": "Traceback (most recent call last):\n  File \"/py/libs/_genlayer_runner.py\", line 180, in <module>\n    _handle_main()\n    ~~~~~~~~~~~~^^\n  File \"/py/libs/_genlayer_runner.py\", line 149, in _handle_main\n    import contract as _user_contract_module  # type: ignore\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/contract.py\", line 152, in <module>\n    class Mendwind(gl.Contract):\n    ...<67 lines>...\n            return canonical(record)\n  File \"/py/std/typing.py\", line 2067, in __new__\n    return super().__new__(mcls, name, bases, namespace, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen abc>\", line 106, in __new__\n  File \"/py/libs/genlayer/gl/genvm_contracts.py\", line 469, in __init_subclass__\n    generate_storage(cls)\n    ~~~~~~~~~~~~~~~~^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 42, in generate_storage\n    _storage_build(cls, {})\n    ~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 249, in _storage_build_inner\n    description = _storage_build_struct(new_cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 329, in _storage_build_struct\n    prop_desc = _storage_build(prop_value, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 238, in _storage_build_inner\n    args.append(_storage_build(c, generics_map))\n                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 219, in _storage_build_inner\n    raise TypeError(\n    \t'use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage'\n    )\nTypeError: use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage\nduring processing type `int`\nduring processing generic argument of `TreeMap[str, int]`, argument `int`, at index `1`\nduring processing type `TreeMap[str, int]`\nduring generating field `counts: genlayer.py.storage.tree_map.TreeMap[str, int]`\nduring processing type `Mendwind` (declared at {'file': '/contract.py', 'line': 151})\n",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              },
+              "execution_stats": {
+                "call_counts": {
+                  "STORAGE_READ": 5,
+                  "NOTIFY_FINISHED": 1
+                },
+                "host_first_method": "STORAGE_READ",
+                "delete_genvm_status": 200,
+                "host_loop_entered_s": 484.37677443,
+                "host_loop_enter_wait_ms": 1387,
+                "host_time_per_method_ms": {
+                  "STORAGE_READ": 1
+                },
+                "host_total_handling_time_ms": 1,
+                "manager_run_attempt_success": {
+                  "attempt": 0,
+                  "duration_ms": 1363
+                },
+                "host_first_method_received_s": 484.376978645,
+                "host_accept_to_first_method_ms": 0
+              },
+              "nondet_disagree": null,
+              "processing_time": 1754,
+              "execution_result": "ERROR",
+              "contract_state_hash": "c543b0dc2b173649cc8a1c5c4491673d8aaad73d3a9a9ca4ceaf57f2417c4754",
+              "pending_transactions": []
+            },
+            {
+              "mode": "validator",
+              "vote": "idle",
+              "result": "AmlkbGU=",
+              "calldata": "",
+              "gas_used": 0,
+              "genvm_result": {
+                "stderr": "Validator execution cancelled after quorum",
+                "stdout": "",
+                "raw_error": {
+                  "fatal": false,
+                  "causes": [
+                    "VALIDATOR_QUORUM_REACHED"
+                  ]
+                },
+                "error_code": "CONSENSUS_VALIDATOR_QUORUM_REACHED"
+              },
+              "execution_stats": null,
+              "nondet_disagree": null,
+              "processing_time": 0,
+              "execution_result": "ERROR",
+              "contract_state_hash": null,
+              "pending_transactions": []
+            }
+          ],
+          "leader_receipt": [
+            {
+              "mode": "leader",
+              "vote": null,
+              "result": {
+                "raw": "AmV4aXRfY29kZSAx",
+                "status": "contract_error",
+                "payload": "exit_code 1"
+              },
+              "calldata": {
+                "base64": "Bg==",
+                "raw": [
+                  6
+                ],
+                "readable": "{}"
+              },
+              "gas_used": 0,
+              "eq_outputs": {},
+              "genvm_result": {
+                "stderr": "Traceback (most recent call last):\n  File \"/py/libs/_genlayer_runner.py\", line 180, in <module>\n    _handle_main()\n    ~~~~~~~~~~~~^^\n  File \"/py/libs/_genlayer_runner.py\", line 149, in _handle_main\n    import contract as _user_contract_module  # type: ignore\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/contract.py\", line 152, in <module>\n    class Mendwind(gl.Contract):\n    ...<67 lines>...\n            return canonical(record)\n  File \"/py/std/typing.py\", line 2067, in __new__\n    return super().__new__(mcls, name, bases, namespace, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen abc>\", line 106, in __new__\n  File \"/py/libs/genlayer/gl/genvm_contracts.py\", line 469, in __init_subclass__\n    generate_storage(cls)\n    ~~~~~~~~~~~~~~~~^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 42, in generate_storage\n    _storage_build(cls, {})\n    ~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 249, in _storage_build_inner\n    description = _storage_build_struct(new_cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 329, in _storage_build_struct\n    prop_desc = _storage_build(prop_value, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 238, in _storage_build_inner\n    args.append(_storage_build(c, generics_map))\n                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 219, in _storage_build_inner\n    raise TypeError(\n    \t'use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage'\n    )\nTypeError: use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage\nduring processing type `int`\nduring processing generic argument of `TreeMap[str, int]`, argument `int`, at index `1`\nduring processing type `TreeMap[str, int]`\nduring generating field `counts: genlayer.py.storage.tree_map.TreeMap[str, int]`\nduring processing type `Mendwind` (declared at {'file': '/contract.py', 'line': 151})\n",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              },
+              "execution_stats": {
+                "call_counts": {
+                  "STORAGE_READ": 5,
+                  "NOTIFY_FINISHED": 1
+                },
+                "host_first_method": "STORAGE_READ",
+                "delete_genvm_status": 200,
+                "host_loop_entered_s": 481.709630269,
+                "host_loop_enter_wait_ms": 4,
+                "host_time_per_method_ms": {
+                  "STORAGE_READ": 1
+                },
+                "host_total_handling_time_ms": 1,
+                "manager_run_attempt_success": {
+                  "attempt": 0,
+                  "duration_ms": 2
+                },
+                "host_first_method_received_s": 481.709705901,
+                "host_accept_to_first_method_ms": 0
+              },
+              "nondet_disagree": null,
+              "processing_time": 1011,
+              "execution_result": "ERROR",
+              "contract_state_hash": "c543b0dc2b173649cc8a1c5c4491673d8aaad73d3a9a9ca4ceaf57f2417c4754",
+              "pending_transactions": []
+            },
+            {
+              "mode": "validator",
+              "vote": "agree",
+              "result": {
+                "raw": "AmV4aXRfY29kZSAx",
+                "status": "contract_error",
+                "payload": "exit_code 1"
+              },
+              "calldata": {
+                "base64": "Bg==",
+                "raw": [
+                  6
+                ],
+                "readable": "{}"
+              },
+              "gas_used": 0,
+              "genvm_result": {
+                "stderr": "Traceback (most recent call last):\n  File \"/py/libs/_genlayer_runner.py\", line 180, in <module>\n    _handle_main()\n    ~~~~~~~~~~~~^^\n  File \"/py/libs/_genlayer_runner.py\", line 149, in _handle_main\n    import contract as _user_contract_module  # type: ignore\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/contract.py\", line 152, in <module>\n    class Mendwind(gl.Contract):\n    ...<67 lines>...\n            return canonical(record)\n  File \"/py/std/typing.py\", line 2067, in __new__\n    return super().__new__(mcls, name, bases, namespace, **kwargs)\n           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen abc>\", line 106, in __new__\n  File \"/py/libs/genlayer/gl/genvm_contracts.py\", line 469, in __init_subclass__\n    generate_storage(cls)\n    ~~~~~~~~~~~~~~~~^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 42, in generate_storage\n    _storage_build(cls, {})\n    ~~~~~~~~~~~~~~^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 249, in _storage_build_inner\n    description = _storage_build_struct(new_cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 329, in _storage_build_struct\n    prop_desc = _storage_build(prop_value, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 238, in _storage_build_inner\n    args.append(_storage_build(c, generics_map))\n                ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 262, in _storage_build\n    return _storage_build_inner(cls, generics_map)\n  File \"/py/libs/genlayer/py/storage/_internal/generate.py\", line 219, in _storage_build_inner\n    raise TypeError(\n    \t'use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage'\n    )\nTypeError: use `bigint` or one of sized integers please, see https://docs.genlayer.com/developers/intelligent-contracts/storage\nduring processing type `int`\nduring processing generic argument of `TreeMap[str, int]`, argument `int`, at index `1`\nduring processing type `TreeMap[str, int]`\nduring generating field `counts: genlayer.py.storage.tree_map.TreeMap[str, int]`\nduring processing type `Mendwind` (declared at {'file': '/contract.py', 'line': 151})\n",
+                "stdout": "",
+                "raw_error": null,
+                "error_code": null,
+                "error_description": null
+              },
+              "execution_stats": {
+                "call_counts": {
+                  "STORAGE_READ": 5,
+                  "NOTIFY_FINISHED": 1
+                },
+                "host_first_method": "STORAGE_READ",
+                "delete_genvm_status": 200,
+                "host_loop_entered_s": 482.994835134,
+                "host_loop_enter_wait_ms": 6,
+                "host_time_per_method_ms": {
+                  "STORAGE_READ": 1
+                },
+                "host_total_handling_time_ms": 1,
+                "manager_run_attempt_success": {
+                  "attempt": 0,
+                  "duration_ms": 4
+                },
+                "host_first_method_received_s": 482.994920026,
+                "host_accept_to_first_method_ms": 0
+              },
+              "nondet_disagree": null,
+              "processing_time": 1172,
+              "execution_result": "ERROR",
+              "contract_state_hash": "c543b0dc2b173649cc8a1c5c4491673d8aaad73d3a9a9ca4ceaf57f2417c4754",
+              "pending_transactions": []
+            }
+          ]
+        },
+        "created_at": "2026-10-29T17:21:27.615589+00:00",
+        "leader_only": false,
+        "execution_mode": "NORMAL",
+        "sender": "0x341D44f3eC2C88a1E623d24878443B6E83Eb6783",
+        "recipient": "0x31B8BdCc7FD03f14e56164e37962c639eFFbc6b8",
+        "result_name": "MAJORITY_AGREE",
+        "last_round": {
+          "round": "0",
+          "leader_index": "0",
+          "votes_committed": "5",
+          "votes_revealed": "5",
+          "appeal_bond": "0",
+          "rotations_left": "3",
+          "result": 6,
+          "round_validators": [
+            "0xe06A34A1eBd398AF3399d08593B8c3C433CdD947",
+            "0x007d6451555Df7765c707284F844137927aE4e5E",
+            "0x4619C8420D50c9dE477DB2CBb7b4863A041688CB",
+            "0x5847AF34a4e5bA96490f8c883598f68EC9B0B907",
+            "0x4441Ebe37E72c039B73f1D6CF8C6DEe277FE547a"
+          ],
+          "validator_votes_hash": [
+            "0xa755832331e4e03e04c3d84d8694558601db10be9c6188c2fe02c0342fc01f68",
+            "0x474f6b087f2aa0399a7047275078fedaaf70e85832bca92a59eae77a99864424",
+            "0xe3b23f40ee771c7c95eda30d07561e92cbfbc334f58cd898952762286a76424e",
+            "0x03db648f5b08b652e4d593cfe94dc277d53ce9574f3f0993f44de8f8d09e2966",
+            "0xd4991a2c144dd3e224b22b4630485b0540c2c9e254541c65b4549ab1d192338a"
+          ],
+          "validator_votes": [
+            1,
+            1,
+            5,
+            1,
+            5
+          ],
+          "validator_votes_name": [
+            "AGREE",
+            "AGREE",
+            "IDLE",
+            "AGREE",
+            "IDLE"
+          ]
+        },
+        "statusName": "FINALIZED"
+      }
+    }
+  ],
+  "pending": null
+}
