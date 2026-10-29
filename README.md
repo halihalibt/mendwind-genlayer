@@ -6,6 +6,8 @@
 
 ![MENDWIND live website](media/preview.jpg)
 
+**Verified workshop: RESTORED · 6/6 repairs · zero remaining materials.** Choose **On GenLayer → Read verified example** to read the completed game without a wallet. [Finalized receipts and public export](EVIDENCE.md).
+
 A windmill, a postal glider and a village postbox need care. The cupboard holds two cloth patches, two pieces of wood, two portions of oil and one metal part. Describe a repair in your own words. GenLayer independently interprets the plan; deterministic contract code applies fixed recipes to a persistent, finite inventory. Repair all three objects within twelve attempts to restore the valley.
 
 ## Play

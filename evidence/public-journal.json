@@ -1,6 +1,6 @@
 {
   "mode": "live",
-  "exported_at": "2026-10-29T17:44:43.745Z",
+  "exported_at": "2026-10-29T18:08:06.372Z",
   "contract": "0x600573f2629cDFD0151723B5892B22A28877840a",
   "game": {
     "history": [
@@ -55,17 +55,87 @@
           1
         ],
         "target": "windmill"
+      },
+      {
+        "applied": [
+          "BRACE_WING",
+          "PATCH_WING"
+        ],
+        "before": "d42e83f4f6e565b434723a18961ba0b9752d177256b06f28f33a9ec489fc75a1",
+        "id": "repair-mvtunbx1",
+        "intent": "f28c808f2ceb513704338c2093b91eebe5bdc3ada86200dd447262718b6d6b62",
+        "interpretation": {
+          "decision": "CLEAR",
+          "steps": [
+            {
+              "action": "BRACE_WING",
+              "quote": "Use wood to brace the cracked wooden wing rib"
+            },
+            {
+              "action": "PATCH_WING",
+              "quote": "cloth to patch the torn fabric wing of the glider"
+            }
+          ]
+        },
+        "outcome": "MENDED",
+        "plan": "Use wood to brace the cracked wooden wing rib, and cloth to patch the torn fabric wing of the glider.",
+        "revision": 3,
+        "stock_after": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "target": "glider"
+      },
+      {
+        "applied": [
+          "FREE_LATCH",
+          "REBUILD_BOX"
+        ],
+        "before": "363d04a5029419bf5ced571f4b21f1b700eae02beca2670473b70f77b2ec5ea9",
+        "id": "repair-mvturek5",
+        "intent": "1947e9d39007fc0dddd29089229b454cd95978138c72206012bbac304c32d690",
+        "interpretation": {
+          "decision": "CLEAR",
+          "steps": [
+            {
+              "action": "FREE_LATCH",
+              "quote": "Oil the stuck latch and replace its broken metal spring."
+            },
+            {
+              "action": "REBUILD_BOX",
+              "quote": "Replace the rotten wooden panel with wood."
+            }
+          ]
+        },
+        "outcome": "MENDED",
+        "plan": "Replace the rotten wooden panel with wood. Oil the stuck latch and replace its broken metal spring.",
+        "revision": 4,
+        "stock_after": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "target": "postbox"
       }
     ],
     "id": "0x1e4fffbe0e16502059c4c2358b9a0d8ed63cf075:afternoon-mvttetsf",
     "objects": {
       "glider": {
-        "done": [],
-        "status": "BROKEN"
+        "done": [
+          "BRACE_WING",
+          "PATCH_WING"
+        ],
+        "status": "MENDED"
       },
       "postbox": {
-        "done": [],
-        "status": "BROKEN"
+        "done": [
+          "FREE_LATCH",
+          "REBUILD_BOX"
+        ],
+        "status": "MENDED"
       },
       "windmill": {
         "done": [
@@ -82,19 +152,19 @@
       0,
       0
     ],
-    "revision": 2,
+    "revision": 4,
     "spent": [
-      1,
-      0,
-      1,
-      0
-    ],
-    "status": "OPEN",
-    "stock": [
-      1,
       2,
-      1,
+      2,
+      2,
       1
+    ],
+    "status": "RESTORED",
+    "stock": [
+      0,
+      0,
+      0,
+      0
     ],
     "version": "mendwind-1"
   }
