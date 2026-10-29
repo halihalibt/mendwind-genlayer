@@ -8,6 +8,8 @@ The recorded browser frontend uses a temporary, locally generated Studio signing
 
 Open [MENDWIND](https://halihalibt.github.io/mendwind-genlayer/), choose **On GenLayer → Read verified example**. No wallet is required. The application verifies source identity and calls `get_game` with `LATEST_FINAL`. The supply cupboard, repair progress and journal are populated from that current response. **Export journal** downloads the loaded state.
 
+The public website's [journal export](evidence/public-journal.json) was downloaded and checked against revision 2.
+
 Game ID: `0x1e4fffbe0e16502059c4c2358b9a0d8ed63cf075:afternoon-mvttetsf`.
 
 ## Finalized records
@@ -23,7 +25,9 @@ Every row above reached `FINALIZED / SUCCESS` and `MAJORITY_AGREE`. An unsupport
 
 ## Verification boundary
 
-Local coverage: 10 JavaScript tests plus 15 mocked-host Python tests. The tests cover restoration, irreversible salvage, atomic material checks, duplicate actions, request idempotency, owner permissions, stale revisions, attempt limits, exact quote constraints, independent-validator rejection and decoded-argument binding. Mocked-host tests do not claim live validator consensus.
+Local coverage: 12 JavaScript tests plus 15 mocked-host Python tests. The tests cover restoration, irreversible salvage, atomic material checks, duplicate actions, request idempotency, owner permissions, stale revisions, attempt limits, exact quote constraints, independent-validator rejection, decoded-argument binding, leader-only rejection and network-timeout reporting. Mocked-host tests do not claim live validator consensus.
+
+The next live action, [postal glider repair](https://explorer-studio.genlayer.com/tx/0xf82c2abe40312f21b3ea4b4084b8dc7b13920776e2487f1e98a957cf8630ef9a), finalized with `NO_MAJORITY / ERROR`: `CONSENSUS_LEADER_EXEC_TIMEOUT`, with stderr `Leader execution exceeded 600.000s`. It is retained in the transaction extracts, does not count as a successful repair, and was not resubmitted. The finalized game remains OPEN at revision 2, with the windmill mended and stock `[1,2,1,1]`. Three-object restoration and salvage are tested locally, not claimed as completed live outcomes.
 
 The Sketchbook uses prewritten local rules and is explicitly labelled. It is never a substitute for a chain result. No real repair, supply provenance, independent human participation or physical safety is asserted. The injected-extension wallet path is available, but this record set uses the temporary Studio player path.
 

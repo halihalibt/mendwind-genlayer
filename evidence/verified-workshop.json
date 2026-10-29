@@ -1,0 +1,100 @@
+{
+  "network": 61999,
+  "contract": "0x600573f2629cDFD0151723B5892B22A28877840a",
+  "game": {
+    "history": [
+      {
+        "applied": [],
+        "before": "67dbaddf84fcc50741a88324e13e1966452a843801f3852446aa8dd2f65bf03f",
+        "id": "repair-mvttgywb",
+        "intent": "3b2c6243df1228c56ed8c0f81e540c1ccb2723c51fa4adade5640c7e33fcdf9d",
+        "interpretation": {
+          "decision": "UNSUPPORTED",
+          "steps": []
+        },
+        "outcome": "UNSUPPORTED",
+        "plan": "Conjure unlimited cloth from thin air and magically repair the windmill without using the cupboard.",
+        "revision": 1,
+        "stock_after": [
+          2,
+          2,
+          2,
+          1
+        ],
+        "target": "windmill"
+      },
+      {
+        "applied": [
+          "OIL_AXLE",
+          "PATCH_SAIL"
+        ],
+        "before": "728073f1ded48cb39afd666f4317bdc891f744fd634a115adcf807aa9bb4e2ed",
+        "id": "repair-mvttizuo",
+        "intent": "7ab56f6983e0b9e28dd90f278a8a7314416818c0ec4992c802dbffffbb0d847f",
+        "interpretation": {
+          "decision": "CLEAR",
+          "steps": [
+            {
+              "action": "OIL_AXLE",
+              "quote": "lubricate the axle with oil"
+            },
+            {
+              "action": "PATCH_SAIL",
+              "quote": "Patch the torn sail with cloth"
+            }
+          ]
+        },
+        "outcome": "MENDED",
+        "plan": "Patch the torn sail with cloth and lubricate the axle with oil.",
+        "revision": 2,
+        "stock_after": [
+          1,
+          2,
+          1,
+          1
+        ],
+        "target": "windmill"
+      }
+    ],
+    "id": "0x1e4fffbe0e16502059c4c2358b9a0d8ed63cf075:afternoon-mvttetsf",
+    "objects": {
+      "glider": {
+        "done": [],
+        "status": "BROKEN"
+      },
+      "postbox": {
+        "done": [],
+        "status": "BROKEN"
+      },
+      "windmill": {
+        "done": [
+          "OIL_AXLE",
+          "PATCH_SAIL"
+        ],
+        "status": "MENDED"
+      }
+    },
+    "owner": "0x1e4fffbe0e16502059c4c2358b9a0d8ed63cf075",
+    "reclaimed": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "revision": 2,
+    "spent": [
+      1,
+      0,
+      1,
+      0
+    ],
+    "status": "OPEN",
+    "stock": [
+      1,
+      2,
+      1,
+      1
+    ],
+    "version": "mendwind-1"
+  }
+}

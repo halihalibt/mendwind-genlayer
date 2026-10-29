@@ -4,6 +4,8 @@
 
 [Open the workshop](https://halihalibt.github.io/mendwind-genlayer/) · [Rules](RULES.md) · [Contract](contracts/mendwind.py) · [Network records](EVIDENCE.md)
 
+![MENDWIND live website](media/preview.jpg)
+
 A windmill, a postal glider and a village postbox need care. The cupboard holds two cloth patches, two pieces of wood, two portions of oil and one metal part. Describe a repair in your own words. GenLayer independently interprets the plan; deterministic contract code applies fixed recipes to a persistent, finite inventory. Repair all three objects within twelve attempts to restore the valley.
 
 ## Play

@@ -79,12 +79,16 @@ function decodeCall(tx){
 }
 export function bindReceipt(tx,p){
  if((tx.from_address||tx.sender||'').toLowerCase()!==p.sender.toLowerCase())throw Error('Transaction sender differs from saved intent.');
+ if(tx.leader_only===true||tx.txDataDecoded?.leaderOnly===true||tx.data?.leader_only===true)throw Error('Leader-only transaction is not accepted.');
  if(p.method==='deploy')return;
  if((tx.to_address||tx.recipient||'').toLowerCase()!==p.address.toLowerCase())throw Error('Transaction contract differs from saved intent.');
  const call=decodeCall(tx);
  if(!call||call.method!==p.method||JSON.stringify(normalize(call.args||[]))!==JSON.stringify(normalize(p.args)))throw Error('Transaction method or arguments differ from saved intent.');
  if(Object.keys(call.kwargs||{}).length)throw Error('Unexpected keyword arguments.');
- if(tx.leader_only===true||tx.txDataDecoded?.leaderOnly===true||tx.data?.leader_only===true)throw Error('Leader-only transaction is not accepted.');
+}
+export function executionFailure(leader){
+ if(leader?.genvm_result?.error_code==='CONSENSUS_LEADER_EXEC_TIMEOUT')return 'Network leader execution timed out after 600 seconds. No repair was applied. No automatic retry was sent.';
+ return 'Finalized execution failed. No repair was accepted. '+(leader?.error||JSON.stringify(leader?.result)||'');
 }
 export async function checkPending(){
  const p=pending();if(!p)return {status:'NONE'};
@@ -99,7 +103,7 @@ export async function checkPending(){
  const execution=tx.txExecutionResultName||leader?.execution_result;
  if(execution!=='SUCCESS'){
   logs.push({...p,status,execution,transaction:normalize(tx)});savePending(null);
-  throw Error('FINALIZED but execution failed. State was not accepted. '+(leader?.error||JSON.stringify(leader?.result)||''));
+  const error=new Error(executionFailure(leader));error.hash=p.hash;error.transactionStatus=status;error.execution=execution;throw error;
  }
  const consensus=tx.resultName||tx.result_name||tx.result;
  if(consensus!=='MAJORITY_AGREE')throw Error('Finalized transaction has no majority agreement: '+String(consensus));
@@ -120,8 +124,9 @@ export async function checkPending(){
 }
 export async function track(onChange){
  for(let n=0;n<120;n++){
+  const saved=pending();
   try{const r=await checkPending();onChange(r);if(['FINALIZED','NONE'].includes(r.status))return r;}
-  catch(e){onChange({status:'CHECK_ERROR',error:e.message});throw e;}
+  catch(e){onChange({status:e.transactionStatus?e.transactionStatus+' / '+(e.execution||'ERROR'):'CHECK_ERROR',hash:e.hash||saved?.hash,error:e.message});throw e;}
   await new Promise(r=>setTimeout(r,4000));
  }
  throw Error('Still waiting. The saved transaction can be checked later without resending.');

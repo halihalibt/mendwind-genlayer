@@ -1,7 +1,7 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {freshGame,practiceStep,conserved,normalize} from '../src/game.js';
-import {bindReceipt} from '../src/chain.js';
+import {bindReceipt,executionFailure} from '../src/chain.js';
 import {abi} from 'genlayer-js';
 
 test('three complete repairs restore the valley and conserve all four materials',()=>{let g=freshGame();for(const o of ['windmill','glider','postbox']){g=practiceStep(g,o,'full');assert.ok(conserved(g));}assert.equal(g.status,'RESTORED');assert.deepEqual(g.stock,[0,0,0,0]);});
@@ -16,3 +16,5 @@ function tx(p=intent){return {from_address:p.sender,to_address:p.address,data:{c
 test('decoded SDK calldata binds to complete saved intent',()=>assert.doesNotThrow(()=>bindReceipt(tx(),intent)));
 test('different sender or target contract is rejected',()=>{assert.throws(()=>bindReceipt({...tx(),from_address:'0x'+'c'.repeat(40)},intent));assert.throws(()=>bindReceipt({...tx(),to_address:'0x'+'c'.repeat(40)},intent));});
 test('tampered method, revision or plan is rejected',()=>{for(const changed of [{...intent,method:'open_workshop'},{...intent,args:['id',2,'request','windmill','Patch the sail.']},{...intent,args:['id',1,'request','windmill','Other plan.']}])assert.throws(()=>bindReceipt(tx(changed),intent));});
+test('leader-only calls and deployments are rejected',()=>{assert.throws(()=>bindReceipt({...tx(),leader_only:true},intent));assert.throws(()=>bindReceipt({...tx(),leader_only:true},{...intent,method:'deploy'}));});
+test('network execution timeout explains failure without reporting a successful repair',()=>{const message=executionFailure({genvm_result:{error_code:'CONSENSUS_LEADER_EXEC_TIMEOUT'}});assert.match(message,/600 seconds/);assert.match(message,/No repair was applied/);assert.match(message,/No automatic retry/);});
